@@ -17,11 +17,10 @@ loan_factor = coeff[1]
 intercept = coeff[2]
 
 def linear_function(ficoScore, loanAmount):
-    interest_rate = ( -1 * intercept) + ( -1 * fico_factor * ficoScore) + (-1 * loan_factor * loanAmount)
-    return interest_rate
+    return ( -1 * intercept) + ( -1 * fico_factor * ficoScore) + (-1 * loan_factor * loanAmount)
 
 def logistic_function(ficoScore, loanAmount):
-    return 1 / (intercept + math.e ** (1 + (fico_factor * ficoScore) + (loan_factor * loanAmount)))
+    return 1 / ( 1 + math.e ** (intercept + (fico_factor * ficoScore) + (loan_factor * loanAmount)))
     
 
 
